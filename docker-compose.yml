@@ -1,0 +1,15 @@
+version: '2'
+services:
+  fizzbuzz-server:
+    container_name: fizzbuzzrestapi
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: fizzbuzzrestapi:latest
+    ports:
+      - 4490:8080
+    networks:
+      - spring-cloud-network
+networks:
+  spring-cloud-network:
+    driver: bridge
